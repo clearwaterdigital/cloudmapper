@@ -158,7 +158,7 @@ You may find that you don't care about some of audit items. You may want to igno
 
 
 # Using a Docker container
-The docker container that is created is meant to be used interactively. 
+The docker container that is created is meant to be used interactively. Alternatively use docker-compose, see next section. 
 
 ```
 docker build -t cloudmapper .
@@ -188,6 +188,36 @@ python cloudmapper.py webserver --public
 ```
 
 You should then be able to view the report by visiting http://127.0.0.1:8000/account-data/report.html
+
+# Using docker-compose
+
+A docker-compose file has been provided. You will need to set some environment variables for the AWS keys, Account name and ID. These can be seen in the dot_env.template file.
+
+Firstly, build the container with:
+
+```
+docker-compose build
+
+```
+
+Next, to provide the environment variables, either copy the dot_env.template to .env and edit. This will be picked up automatically at runtime.
+Alternatively, should you not wish to store secrets in a text file, export the variables manually.
+
+To collect and run the report then start the webserver to view, simply run:
+
+```
+docker-compose up
+
+```
+
+If you just want to run the webserver to view a previously collected set of data, run:
+
+```
+docker-compose -f docker-compose-webserver.yml up
+
+```
+
+
 
 # Running CloudMapper regularly to audit your environment
 A CDK app for deploying CloudMapper via Fargate so that it runs nightly, sends audit findings as alerts to a Slack channel, and generating a report that is saved on S3, is described [here](auditor/README.md).

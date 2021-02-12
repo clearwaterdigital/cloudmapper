@@ -18,6 +18,8 @@ function run_collection {
 
 function webserver_mode {
   echo "WEBSERVER running"
+  echo "The map can be seen at http://localhost:8000"
+  echo "The detailed report can be seen at http://localhost:8000/account-data/report.html"
   python cloudmapper.py webserver --public
 }
 
