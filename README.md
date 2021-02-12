@@ -200,7 +200,7 @@ docker-compose build
 
 ```
 
-Next, to provide the environment variables, either copy the dot_env.template to .env and edit. This will be picked up automatically at runtime.
+Next, to provide the environment variables, copy the dot_env.template to .env and edit. This will be picked up automatically at runtime.
 Alternatively, should you not wish to store secrets in a text file, export the variables manually.
 
 To collect and run the report then start the webserver to view, simply run:
