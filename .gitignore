@@ -22,3 +22,5 @@ auditor/.cdk.staging
 auditor/cdk.out
 auditor/.env
 auditor/resources/cloudmapper
+.env
+tags*
