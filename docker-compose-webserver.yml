@@ -11,7 +11,7 @@ services:
       - "8000:8000"
     volumes:
       - "cloudmapper-web:/opt/cloudmapper/web"
-    command: ["--collect", "--webserver"]
+    command: ["--webserver"]
 
 volumes:
   cloudmapper-web:
